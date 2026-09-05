@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block title%} Heart Disease Predictor {% endblock %}
+
+{% block content %} 
+    <form name="f1" method="POST">
+        {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Age</label>
+        <input type="text" name="age" class="form-control" id="exampleFormControlInput1" placeholder="age">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Sex</label>
+        <input type="text" name="sex" class="form-control" id="exampleFormControlInput1" placeholder="Male/Female/Other">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">CP</label>
+        <input type="text" name="cp" class="form-control" id="exampleFormControlInput1" placeholder="160">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">BP</label>
+        <input type="text" name="trestbps" class="form-control" id="exampleFormControlInput1" placeholder="160">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Cholestrol</label>
+        <input type="text" name="chol" class="form-control" id="exampleFormControlInput1" placeholder="cholestrol">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">FBS</label>
+        <input type="text" name="fbs" class="form-control" id="exampleFormControlInput1" placeholder="FBS">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Restecg</label>
+        <input type="text" name="restecg" class="form-control" id="exampleFormControlInput1" placeholder="ECG">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Thalach</label>
+        <input type="text" name="thalach" class="form-control" id="exampleFormControlInput1" placeholder="Talach">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Exang</label>
+        <input type="text" name="exang" class="form-control" id="exampleFormControlInput1" placeholder="Exang">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">oldPeak</label>
+        <input type="text" name="oldpeak" class="form-control" id="exampleFormControlInput1" placeholder="OldPeak">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Slope</label>
+        <input type="text" name="slope" class="form-control" id="exampleFormControlInput1" placeholder="Slope">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Ca</label>
+        <input type="text" name="ca" class="form-control" id="exampleFormControlInput1" placeholder="CA">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Thal</label>
+        <input type="text" name="thal" class="form-control" id="exampleFormControlInput1" placeholder="Thal">
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if result %}
+        <h3>Prediciton : {{ result }}</h3>
+    {% endif %}
+{% endblock %}
